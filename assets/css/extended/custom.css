@@ -1,0 +1,189 @@
+/* =============================================
+   自定义主题：粉紫可爱风
+   覆盖 PaperMod 默认 CSS 变量
+   ============================================= */
+
+/* 中文字体（使用国内可访问的 CDN） */
+@import url('https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap');
+
+/* ---- 亮色模式配色 ---- */
+:root {
+    --theme: #fff9fb;
+    --entry: #fff0f5;
+    --primary: #3d2040;
+    --secondary: #9b6b8a;
+    --tertiary: #f5cce8;
+    --content: #4a2d4a;
+    --border: #f0d0e8;
+    --code-bg: #fce8f3;
+    --code-block-bg: #2d1b35;
+    --radius: 12px;
+}
+
+/* ---- 暗色模式配色 ---- */
+:root[data-theme="dark"] {
+    --theme: #1e1020;
+    --entry: #2a1530;
+    --primary: #f5d0f0;
+    --secondary: #c9a0c0;
+    --tertiary: #4a2d55;
+    --content: #e8c0e0;
+    --border: #3d2048;
+    --code-bg: #2d1535;
+    --code-block-bg: #1a0d20;
+}
+
+/* ---- 字体 ---- */
+body {
+    font-family: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', serif;
+}
+
+.logo a {
+    font-family: 'Noto Serif SC', serif;
+    background: linear-gradient(135deg, #c4589a, #9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---- 链接颜色 ---- */
+a {
+    color: #c4589a;
+}
+
+a:hover {
+    color: #e070b8;
+}
+
+/* ---- 文章卡片悬浮效果 ---- */
+.post-entry {
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.post-entry:hover {
+    border-color: #e8a0d0;
+    box-shadow: 0 4px 20px rgba(196, 88, 154, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ---- 导航栏当前页下划线 ---- */
+#menu .active {
+    border-bottom-color: #c4589a;
+}
+
+/* ---- 首页欢迎区左边框装饰 ---- */
+.home-info .entry-content {
+    border-left: 3px solid #e8a0d0;
+    padding-left: 14px;
+    -webkit-line-clamp: unset;
+}
+
+/* ---- 标签样式 ---- */
+.terms-tags a {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.terms-tags a:hover {
+    background: #f5cce8;
+    color: #c4589a;
+    border-color: #e8a0d0;
+}
+
+/* ---- 分页按钮 ---- */
+.pagination a {
+    background: linear-gradient(135deg, #c4589a, #9b59b6);
+    border-radius: 20px;
+}
+
+/* ---- 文章内标题颜色 ---- */
+.post-single h2,
+.post-single h3,
+.post-single h4 {
+    color: #8b2f6b;
+}
+
+[data-theme="dark"] .post-single h2,
+[data-theme="dark"] .post-single h3,
+[data-theme="dark"] .post-single h4 {
+    color: #e8a0d0;
+}
+
+/* ---- 引用块样式 ---- */
+blockquote {
+    border-left: 4px solid #e8a0d0;
+    background: var(--entry);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    color: var(--secondary);
+}
+
+/* =============================================
+   代码高亮：粉紫风（覆盖 chroma-styles.css）
+   ============================================= */
+.chroma {
+    background-color: #2d1b35 !important;
+    color: #f0d0f0;
+    border-radius: 12px;
+}
+
+/* 关键字：粉色 */
+.chroma .k,
+.chroma .kd,
+.chroma .kr,
+.chroma .kp { color: #f4a7d0; }
+
+/* 关键字类型：浅紫 */
+.chroma .kt,
+.chroma .kc { color: #d4b8ff; }
+
+/* 字符串：薄荷绿（与粉紫形成对比，增强可读性） */
+.chroma .s,
+.chroma .s1,
+.chroma .s2,
+.chroma .sb,
+.chroma .sc,
+.chroma .si,
+.chroma .sx { color: #a8e6cf; }
+
+/* 注释：玫瑰灰斜体 */
+.chroma .c,
+.chroma .c1,
+.chroma .cm,
+.chroma .cs { color: #9a7090; font-style: italic; }
+
+/* 函数名：浅紫 */
+.chroma .nf,
+.chroma .fm { color: #d4b8ff; }
+
+/* 数字：暖橙（点缀色） */
+.chroma .mi,
+.chroma .mf,
+.chroma .m { color: #f9c4a8; }
+
+/* 类名/常量：金黄 */
+.chroma .nc,
+.chroma .no { color: #ffe09b; }
+
+/* 内置函数：青色 */
+.chroma .nb { color: #91d7e3; }
+
+/* 操作符：粉白 */
+.chroma .o,
+.chroma .ow { color: #f5c0e0; font-weight: bold; }
+
+/* 变量：浅粉 */
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi { color: #f4dbd6; }
+
+/* 行号 */
+.chroma .lnt,
+.chroma .ln { color: #7a5070; }
+
+/* 选中行高亮 */
+.chroma .hl { background-color: #4a2050; }
