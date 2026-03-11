@@ -1,0 +1,72 @@
+baseURL: "https://Ruby-sy.github.io/"
+languageCode: zh-CN
+title: "Ruby-sy 的技术博客"
+theme: PaperMod
+
+paginate: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Ruby-sy 的技术博客"
+  description: "记录学习与实践的技术博客"
+  author: "Ruby-sy"
+
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+
+  homeInfoParams:
+    Title: "Hi, 我是 Ruby-sy 👋"
+    Content: >
+      这里是我的技术博客，记录学习与实践。
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/Ruby-sy"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
